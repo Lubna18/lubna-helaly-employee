@@ -1,14 +1,14 @@
 package com.lubna.employees.model;
 
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class EmployeeWorkTogetherTest {
 
     private EmployeeWorkTogether employeeWorkTogether;
 
-    @Before
+    @BeforeEach
     public void init(){
         employeeWorkTogether = new EmployeeWorkTogether("55","66","1", 9);
     }

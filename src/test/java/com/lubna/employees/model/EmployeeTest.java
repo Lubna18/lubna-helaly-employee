@@ -1,14 +1,14 @@
 package com.lubna.employees.model;
 
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class EmployeeTest {
 
     private Employee e;
 
-    @Before
+    @BeforeEach
     public void init(){
         e = new Employee("567","77","2011-04-22","2022-06-29");
     }
