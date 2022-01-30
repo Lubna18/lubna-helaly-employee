@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Employee Statistics</title>
+
+    <!--Bootstrap 4-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+        <div class="col-10 mx-auto">
+            <h1 class="display-3">Employee Statistics</h1>
+            <!--display error if any-->
+            <div class="alert alert-danger" role="alert" th:if="${!status}">
+                <strong>Error:</strong>
+                <span th:text="${message}"></span>
+            </div>
+
+            <!--display employees list-->
+            <table class="table table-striped" th:if="${status}">
+                <thead>
+                <tr>
+                    <th scope="col">Employee ID #1</th>
+                    <th scope="col">Employee ID #2</th>
+                    <th scope="col">Project ID</th>
+                    <th scope="col">Days Worked</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="employee, i : ${employeeWorkTogethers}">
+                    <td th:text="${employee.employeeId1}"></td>
+                    <td th:text="${employee.employeeId2}"></td>
+                    <td th:text="${employee.projectId}"></td>
+                    <td th:text="${employee.daysWorked}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
